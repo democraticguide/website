@@ -1,0 +1,14 @@
+{
+  "common": {
+    "name": "Democratic Guide"
+  },
+  "countries": {
+    "ie": "Ireland"
+  },
+  "header": {
+    "searchCountry": "Search Country",
+    "noCountryFound": "No Country Found",
+    "chooseLanguage": "Choose Language",
+    "chooseTheme": "Choose Theme"
+  }
+}

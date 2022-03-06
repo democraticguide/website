@@ -1,0 +1,14 @@
+{
+  "common": {
+    "name": "Poradnik Demokracyjny"
+  },
+  "countries": {
+    "ie": "Irlandia"
+  },
+  "header": {
+    "searchCountry": "Szukaj Kraju",
+    "noCountryFound": "Nie znaleziono Kraju",
+    "chooseLanguage": "Wybierz język",
+    "chooseTheme": "Wybierz motyw"
+  }
+}

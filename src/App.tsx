@@ -1,13 +1,17 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
+
+import './services/i18n'
+
+import AppRouter from './AppRouter'
+import { CssBaseline } from '@mui/material'
+import ThemeProvider from './contexts/Theme'
 
 export default function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Democratic Guide</h1>
-        <h4>Coming Soon</h4>
-      </header>
-    </div>
-  );
+    <ThemeProvider>
+      <CssBaseline />
+      <AppRouter />
+    </ThemeProvider>
+  )
 }
