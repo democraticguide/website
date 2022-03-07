@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 
 import Container from '@mui/material/Container'
 
@@ -12,7 +12,7 @@ import Header from './components/Header'
 
 export default function AppRouter () {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <Container sx={{ marginBlock: 12 }}>
         <Routes>
@@ -21,6 +21,6 @@ export default function AppRouter () {
         </Routes>
       </Container>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
