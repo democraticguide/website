@@ -26,22 +26,22 @@ interface ProviderProps {
 }
 
 export default function ThemeProvider (props: ProviderProps) {
-  const [mode, setMode] = React.useState<PaletteMode>(useMediaQuery('(prefers-color-scheme: light)') ? 'light' : 'dark')
-  const [userPreference, setUserPreference] = React.useState<Mode>(localStorage.getItem('theme') as Mode ?? 'system')
-
+  const [mode, setMode] = React.useState<PaletteMode>(
+    useMediaQuery('(prefers-color-scheme: light)') ? 'light' : 'dark')
+  const [userPreference, setUserPreference] = React.useState<Mode>(
+    () => localStorage.getItem('theme') as Mode ?? 'system')
   const mediaQueryPreference = useMediaQuery('(prefers-color-scheme: light)') ? 'light' : 'dark'
 
-  const updateMode = (preference: Mode) => {
-    localStorage.setItem('theme', preference)
-    setUserPreference(preference)
-    switch (preference) {
+  React.useEffect(() => {
+    localStorage.setItem('theme', userPreference)
+    switch (userPreference) {
       case 'system':
         setMode(mediaQueryPreference)
         break
       default:
-        setMode(preference)
+        setMode(userPreference)
     }
-  }
+  }, [userPreference])
 
   React.useEffect(() => {
     if (mediaQueryPreference !== mode && userPreference === 'system') {
@@ -80,7 +80,7 @@ export default function ThemeProvider (props: ProviderProps) {
 
   return (
     <ThemeContext.Provider
-      value={[userPreference, updateMode]}
+      value={[userPreference, setUserPreference]}
     >
       <MuiThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
