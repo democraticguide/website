@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useNavigate, useMatch } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import {
@@ -15,7 +15,7 @@ import { Search } from '@mui/icons-material'
 
 interface CountryOption {
   code: string
-  name: string
+  label: string
 }
 
 interface CountryData {
@@ -26,30 +26,26 @@ export default function CountrySelector () {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [options, setOptions] = React.useState<CountryOption[]>([])
-  const matchCountry = useMatch('/country/:country')
-  const [value, setValue] = React.useState<string>('')
-  // const [defaultCountry, setDefaultCountry] = React.useState<CountryOption | null>(null)
+  const [inputValue, setInputValue] = React.useState<string>('')
+  const [value, setValue] = React.useState<CountryOption | null>(null)
 
   const [data, loading, error] = useDataFetch<CountryData>('/countries')
 
+  const expand = (code: string): CountryOption => {
+    return { code, label: t(`countries:${code}`) }
+  }
+
   React.useEffect(() => {
+    setInputValue('')
+    setValue(null)
     if (!loading && data && !error) {
       setOptions(data.countries.map((country: string) => expand(country)))
     }
-  }, [loading])
-
-  React.useEffect(() => {
-    if (matchCountry) {
-      setValue(matchCountry.params.country ?? '')
-    }
-  }, [])
-
-  const expand = (code: string): CountryOption => {
-    return { code, name: t(`countries:${code}`) }
-  }
+  }, [loading, t])
 
   const viewCountry = (value: CountryOption | null) => {
     if (value) {
+      setValue(value)
       navigate(`/country/${value.code}`)
     }
   }
@@ -60,12 +56,10 @@ export default function CountrySelector () {
       disabled={loading}
       options={options}
       fullWidth
-      getOptionLabel={(option) => option.name}
       onChange={(_, value) => viewCountry(value)}
-      onInputChange={(_, value) => { setValue(value) }}
-      value={expand(value)}
-      // defaultValue={defaultCountry}
-      isOptionEqualToValue={(option, value) => option.code === value.code}
+      onInputChange={(_, value) => { setInputValue(value) }}
+      inputValue={inputValue}
+      value={value}
       renderOption={(props, option) => (
         <Box
           { ...props}
@@ -78,9 +72,9 @@ export default function CountrySelector () {
             loading='lazy'
             width='20'
             src={'https://flagcdn.com/' + option.code.toLowerCase() + '.svg'}
-            alt={option.name}
+            alt={option.label}
           />
-          {option.name}
+          {option.label}
         </Box>
       )}
       renderInput={(params) => (
