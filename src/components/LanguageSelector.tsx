@@ -35,7 +35,10 @@ export default function LanguageSelector () {
   })
 
   return (
-    <HeaderMenu icon={<Language color='inherit'/>}>
+    <HeaderMenu
+      icon={<Language color='inherit'/>}
+      label={t('header:chooseLanguage')}
+    >
       <MenuItem disabled={true}>
         {t('header:chooseLanguage')}
       </MenuItem>

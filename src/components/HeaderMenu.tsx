@@ -8,6 +8,7 @@ import {
 
 interface Props {
   icon: React.ReactNode,
+  label: string,
   children?: React.ReactNode
 }
 
@@ -21,6 +22,7 @@ export default function HeaderMenu (props: Props) {
       onClick={(event) => setAnchor(event.currentTarget)}
       aria-controls={open ? 'basic-menu' : undefined}
       aria-haspopup='true'
+      aria-label={props.label}
       aria-expanded={open ? 'true' : undefined}
     >
       {props.icon}

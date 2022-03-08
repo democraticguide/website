@@ -23,7 +23,10 @@ export default function ThemeSelector () {
   const [mode, setMode] = React.useContext(ThemeContext)
 
   return (
-    <HeaderMenu icon={<BrightnessMedium />}>
+    <HeaderMenu
+      icon={<BrightnessMedium />}
+      label={t('header:chooseTheme')}
+    >
       <MenuItem disabled={true}>
         {t('header:chooseTheme')}
       </MenuItem>
