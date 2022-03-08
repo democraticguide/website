@@ -47,7 +47,8 @@ export default function Header () {
             order: { xs: 1, md: 3 },
             marginInline: 2,
             display: 'flex',
-            justifyContent: 'flex-end'
+            justifyContent: 'flex-end',
+            marginInlineStart: { xs: 'auto', md: 2 }
           }}
         >
           <ThemeSelector />
