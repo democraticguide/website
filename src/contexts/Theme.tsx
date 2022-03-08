@@ -32,23 +32,6 @@ export default function ThemeProvider (props: ProviderProps) {
     () => localStorage.getItem('theme') as Mode ?? 'system')
   const mediaQueryPreference = useMediaQuery('(prefers-color-scheme: light)') ? 'light' : 'dark'
 
-  React.useEffect(() => {
-    localStorage.setItem('theme', userPreference)
-    switch (userPreference) {
-      case 'system':
-        setMode(mediaQueryPreference)
-        break
-      default:
-        setMode(userPreference)
-    }
-  }, [userPreference])
-
-  React.useEffect(() => {
-    if (mediaQueryPreference !== mode && userPreference === 'system') {
-      setMode(mediaQueryPreference)
-    }
-  }, [mediaQueryPreference])
-
   const theme = React.useMemo(() => {
     const theme = createTheme({
       palette: {
@@ -77,6 +60,28 @@ export default function ThemeProvider (props: ProviderProps) {
     })
     return responsiveFontSizes(theme)
   }, [mode])
+
+  React.useEffect(() => {
+    localStorage.setItem('theme', userPreference)
+    switch (userPreference) {
+      case 'system':
+        setMode(mediaQueryPreference)
+        break
+      default:
+        setMode(userPreference)
+    }
+  }, [userPreference])
+
+  React.useEffect(() => {
+    document.querySelector('meta[name="theme-color"]')!
+      .setAttribute('content', theme.palette.background.default)
+  }, [mode])
+
+  React.useEffect(() => {
+    if (mediaQueryPreference !== mode && userPreference === 'system') {
+      setMode(mediaQueryPreference)
+    }
+  }, [mediaQueryPreference])
 
   return (
     <ThemeContext.Provider
