@@ -10,5 +10,13 @@
     "noCountryFound": "Nie znaleziono Kraju",
     "chooseLanguage": "Wybierz język",
     "chooseTheme": "Wybierz motyw"
+  },
+  "country": {
+    "population": "Populacja",
+    "capital": "Stolica"
+  },
+  "errors": {
+    "countryNotFound": "Nie znaleziono Kraju",
+    "languageNotFound": "Nie znaleziono języka, wspomóż nas dodając język do projektu"
   }
 }

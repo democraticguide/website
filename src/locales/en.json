@@ -10,5 +10,13 @@
     "noCountryFound": "No Country Found",
     "chooseLanguage": "Choose Language",
     "chooseTheme": "Choose Theme"
+  },
+  "country": {
+    "population": "Population",
+    "capital": "Capital"
+  },
+  "errors": {
+    "countryNotFound": "Country Not Found",
+    "languageNotFound": "Language not found, help us by contributing to our translation efforts"
   }
 }
