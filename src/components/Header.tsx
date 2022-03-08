@@ -19,6 +19,11 @@ export default function Header () {
   return (<>
     <AppBar
       position='fixed'
+      sx={{
+        // TODO: Get the border radius from the theme
+        borderEndStartRadius: { xs: 12, md: 0 },
+        borderEndEndRadius: { xs: 12, md: 0 }
+      }}
     >
       <Toolbar
         disableGutters
