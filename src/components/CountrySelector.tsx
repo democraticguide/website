@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { SxProps, Theme } from '@mui/material/styles'
 
 import {
   Autocomplete,
@@ -23,7 +24,11 @@ interface CountryData {
   countries: string[]
 }
 
-export default function CountrySelector () {
+interface Props {
+  sx?: SxProps<Theme>
+}
+
+export default function CountrySelector (props: Props) {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [options, setOptions] = React.useState<CountryOption[]>([])
@@ -53,6 +58,7 @@ export default function CountrySelector () {
 
   return (
     <Autocomplete
+      sx={props.sx}
       disablePortal
       disabled={loading}
       options={options}

@@ -20,23 +20,34 @@ export default function Header () {
     <AppBar
       position='fixed'
     >
-      <Toolbar disableGutters>
+      <Toolbar
+        disableGutters
+        sx={{
+          display: 'flex',
+          flexWrap: { xs: 'wrap', md: 'nowrap' }
+        }}
+      >
         <Typography
           variant='h2'
           sx={{
-            display: { xs: 'none', sm: 'block' },
             marginInline: 2,
-            marginBlock: 1
+            marginBlock: 2,
+            order: { sm: 1, md: 1 }
           }}
         >
           {t('common:name')}
         </Typography>
-        <CountrySelector />
+        <CountrySelector
+          sx={{
+            order: { xs: 3, md: 2 }
+          }}
+        />
         <Box
           sx={{
-            display: { xs: 'none', sm: 'flex' },
+            order: { xs: 1, md: 3 },
             marginInline: 2,
-            flexGrow: 1
+            display: 'flex',
+            justifyContent: 'flex-end'
           }}
         >
           <ThemeSelector />

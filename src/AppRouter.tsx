@@ -14,7 +14,7 @@ export default function AppRouter () {
   return (
     <HashRouter>
       <Header />
-      <Container sx={{ marginBlock: 12 }}>
+      <Container sx={{ marginBlock: { xs: 16, md: 12 } }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='/country/:country' element={<Country />} />
