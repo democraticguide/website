@@ -1,11 +1,14 @@
 import React from 'react'
 
+import { useTranslation } from 'react-i18next'
+
 import { Language } from '@mui/icons-material'
 import { MenuItem } from '@mui/material'
 
-import HeaderMenu from './HeaderMenu'
-import { useTranslation } from 'react-i18next'
 import { languages } from '../services/i18n'
+
+import HeaderMenu from './HeaderMenu'
+import Flag from './Flag'
 
 const nativeNames = new Map<string, string>([
   ['en', 'English'],
@@ -17,11 +20,7 @@ export default function LanguageSelector () {
 
   const options = Object.keys(languages).map((code: string) => {
     // Override some langauges with their flags
-    let displayCode = code
-    switch (code) {
-      case 'dev': return null
-      case 'en': displayCode = 'gb'; break
-    }
+
     return (
       <MenuItem
         sx={{
@@ -29,12 +28,7 @@ export default function LanguageSelector () {
         }}
         onClick={() => i18n.changeLanguage(code)}
         key={code}>
-        <img
-          loading='lazy'
-          width='20'
-          src={'https://flagcdn.com/' + displayCode.toLowerCase() + '.svg'}
-          alt={code}
-        />
+        <Flag code={code} />
         {nativeNames.get(code) ?? code}
       </MenuItem>
     )

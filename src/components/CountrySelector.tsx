@@ -12,6 +12,7 @@ import {
 
 import useDataFetch from '../hooks/fetch'
 import { Search } from '@mui/icons-material'
+import Flag from './Flag'
 
 interface CountryOption {
   code: string
@@ -68,12 +69,7 @@ export default function CountrySelector () {
             '& > img': { marginInlineEnd: 1 }
           }}
         >
-          <img
-            loading='lazy'
-            width='20'
-            src={'https://flagcdn.com/' + option.code.toLowerCase() + '.svg'}
-            alt={option.label}
-          />
+          <Flag code={option.code} />
           {option.label}
         </Box>
       )}
