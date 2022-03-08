@@ -6,7 +6,8 @@ import {
   AppBar,
   Box,
   Toolbar,
-  Typography
+  Typography,
+  useScrollTrigger
 } from '@mui/material'
 
 import LanguageSelector from './LanguageSelector'
@@ -15,9 +16,13 @@ import CountrySelector from './CountrySelector'
 
 export default function Header () {
   const { t } = useTranslation()
+  const scrolled = useScrollTrigger(
+    { disableHysteresis: true, threshold: 4 }
+  )
 
   return (<>
     <AppBar
+      elevation={scrolled ? 4 : 0}
       position='fixed'
       sx={{
         // TODO: Get the border radius from the theme
