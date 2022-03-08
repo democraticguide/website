@@ -47,6 +47,9 @@ export default function ThemeProvider (props: ProviderProps) {
         h3: { fontSize: '20' },
         h4: { fontSize: '16' }
       },
+      shape: {
+        borderRadius: 12
+      },
       components: {
         MuiAppBar: {
           styleOverrides: {
