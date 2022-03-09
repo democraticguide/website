@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "https://democratic.guide/static/css/main.585a9e8f.css",
-    "main.js": "https://democratic.guide/static/js/main.6c223363.js",
+    "main.js": "https://democratic.guide/static/js/main.536f6f7e.js",
     "static/js/787.cb316e6c.chunk.js": "https://democratic.guide/static/js/787.cb316e6c.chunk.js",
     "index.html": "https://democratic.guide/index.html",
     "main.585a9e8f.css.map": "https://democratic.guide/static/css/main.585a9e8f.css.map",
-    "main.6c223363.js.map": "https://democratic.guide/static/js/main.6c223363.js.map",
+    "main.536f6f7e.js.map": "https://democratic.guide/static/js/main.536f6f7e.js.map",
     "787.cb316e6c.chunk.js.map": "https://democratic.guide/static/js/787.cb316e6c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.585a9e8f.css",
-    "static/js/main.6c223363.js"
+    "static/js/main.536f6f7e.js"
   ]
 }
