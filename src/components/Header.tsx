@@ -25,9 +25,13 @@ export default function Header () {
       elevation={scrolled ? 4 : 0}
       position='fixed'
       sx={{
+        background: 'inherit',
         // TODO: Get the border radius from the theme
         borderEndStartRadius: { xs: 12, md: 0 },
-        borderEndEndRadius: { xs: 12, md: 0 }
+        borderEndEndRadius: { xs: 12, md: 0 },
+        transition: (theme) => theme.transitions.create(['box-shadow', 'transform'], {
+          duration: theme.transitions.duration.standard
+        })
       }}
     >
       <Toolbar
