@@ -9,7 +9,12 @@
     "searchCountry": "Search Country",
     "noCountryFound": "No Country Found",
     "chooseLanguage": "Choose Language",
-    "chooseTheme": "Choose Theme"
+    "theme": {
+      "chooseTheme":"Choose Theme",
+      "light":"Light",
+      "system":"System",
+      "dark":"Dark"
+    }
   },
   "home": {
     "learnMore": "Learn more about each country's political situation",

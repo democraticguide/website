@@ -5,7 +5,8 @@ import { useTranslation } from 'react-i18next'
 import {
   Button,
   ButtonGroup,
-  MenuItem
+  MenuItem,
+  Tooltip
 } from '@mui/material'
 
 import {
@@ -25,30 +26,36 @@ export default function ThemeSelector () {
   return (
     <HeaderMenu
       icon={<BrightnessMedium />}
-      label={t('header:chooseTheme')}
+      label={t('header:theme.chooseTheme')}
     >
       <MenuItem disabled={true}>
-        {t('header:chooseTheme')}
+        {t('header:theme.chooseTheme')}
       </MenuItem>
       <ButtonGroup sx={{ margin: 1 }}>
-        <Button
-          onClick={() => setMode('light')}
-          variant={mode === 'light' ? 'contained' : 'outlined'}
-        >
-          <BrightnessHigh />
-        </Button>
-        <Button
-          onClick={() => setMode('system')}
-          variant={mode === 'system' ? 'contained' : 'outlined'}
-        >
-          <BrightnessMedium />
-        </Button>
-        <Button
-          onClick={() => setMode('dark')}
-          variant={mode === 'dark' ? 'contained' : 'outlined'}
-        >
-          <DarkMode />
-        </Button>
+        <Tooltip title={t('header:theme.light').toString()}>
+          <Button
+            onClick={() => setMode('light')}
+            variant={mode === 'light' ? 'contained' : 'outlined'}
+          >
+            <BrightnessHigh />
+          </Button>
+        </Tooltip>
+        <Tooltip title={t('header:theme.system').toString()}>
+          <Button
+            onClick={() => setMode('system')}
+            variant={mode === 'system' ? 'contained' : 'outlined'}
+          >
+            <BrightnessMedium />
+          </Button>
+        </Tooltip>
+        <Tooltip title={t('header:theme.dark').toString()}>
+          <Button
+            onClick={() => setMode('dark')}
+            variant={mode === 'dark' ? 'contained' : 'outlined'}
+          >
+            <DarkMode />
+          </Button>
+        </Tooltip>
       </ButtonGroup>
     </HeaderMenu>
   )

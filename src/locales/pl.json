@@ -9,7 +9,12 @@
     "searchCountry": "Szukaj Kraju",
     "noCountryFound": "Nie znaleziono Kraju",
     "chooseLanguage": "Wybierz język",
-    "chooseTheme": "Wybierz motyw"
+    "theme": {
+      "chooseTheme":"Wybierz motyw",
+      "light":"Jasny",
+      "system":"System",
+      "dark":"Ciemny"
+    }
   },
   "home": {
     "learnMore": "Dowiedz się więcej o sytuacji politycznej w innych krajach",
