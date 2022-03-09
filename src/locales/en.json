@@ -11,6 +11,22 @@
     "chooseLanguage": "Choose Language",
     "chooseTheme": "Choose Theme"
   },
+  "home": {
+    "learnMore": "Learn more about each country's political situation",
+    "example": {
+      "country": "Republic of Example",
+      "category": "Social",
+      "pineappleOnPizza": "Pineapple on Pizza",
+      "pineappleOnPizzaDescription": "Is it legal to put pineapple on pizza?",
+      "pineappleOnPizzaLeft": "Legal",
+      "pineappleOnPizzaRight": "Illegal",
+      "lizardPeople": "Lizard People",
+      "lizardPeopleDescription": "Are there lizard people in the country?",
+      "lizardPeopleLeft": "No",
+      "lizardPeopleRight": "Yes"
+    },
+    "nextSteps": "Of course this is only an example. You can start by searching for a country to learn more about them."
+  },
   "country": {
     "population": "Population",
     "capital": "Capital"

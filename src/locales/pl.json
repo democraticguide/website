@@ -11,6 +11,22 @@
     "chooseLanguage": "Wybierz język",
     "chooseTheme": "Wybierz motyw"
   },
+  "home": {
+    "learnMore": "Dowiedz się więcej o sytuacji politycznej w innych krajach",
+    "example": {
+      "country": "Republika Przykładu",
+      "category": "Problemy Społeczne",
+      "pineappleOnPizza": "Ananas na pizzy",
+      "pineappleOnPizzaDescription": "Czy jest legalne kladzenie ananasów na pizzę?",
+      "pineappleOnPizzaLeft": "Legalne",
+      "pineappleOnPizzaRight": "Zabronione",
+      "lizardPeople": "Reptylianie",
+      "lizardPeopleDescription": "Czy w kraju są reptylianie?",
+      "lizardPeopleLeft": "Nie",
+      "lizardPeopleRight": "Tak"
+    },
+    "nextSteps": "Oczywiście to tylko przykład. Możesz zacząć od wyszukania kraju, aby dowiedzieć się o nim więcej."
+  },
   "country": {
     "population": "Populacja",
     "capital": "Stolica"
