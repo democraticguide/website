@@ -11,6 +11,7 @@ import {
   createTheme,
   responsiveFontSizes
 } from '@mui/material/styles'
+import * as Color from '@mui/material/colors'
 
 export type Mode = 'light' | 'system' | 'dark'
 
@@ -39,6 +40,10 @@ export default function ThemeProvider (props: ProviderProps) {
         primary: {
           main: '#1976d2',
           contrastText: mode === 'light' ? '#000' : '#fff'
+        },
+        background: {
+          default: mode === 'light' ? Color.grey[100] : Color.grey[900],
+          paper: mode === 'light' ? Color.grey[50] : Color.grey[900]
         }
       },
       typography: {
@@ -54,7 +59,7 @@ export default function ThemeProvider (props: ProviderProps) {
         MuiAppBar: {
           styleOverrides: {
             root: {
-              backgroundColor: 'transparent',
+              background: 'transparent',
               backdropFilter: 'blur(1rem)'
             }
           }
